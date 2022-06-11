@@ -11,13 +11,13 @@ request.addEventListener("load", function () {
   console.log(data);
 
   const html = ` <!-- <article class="country">
-  <img src="" alt="" class="country-img" />
+  <img src="${data.flag}" alt="flag" class="country-img" />
   <div class="country-data">
-    <h3 class="country-name"></h3>
-    <h4 class="country-region"></h4>
-    <p class="country-population"></p>
-    <p class="country-language"></p>
-    <p class="country-currency"></p>
+    <h3 class="country-name">${data.name}</h3>
+    <h4 class="country-region">${data.region}</h4>
+    <p class="country-population">${(+data.population / 1000000).toFixed(1)}</p>
+    <p class="country-language">${2}</p>
+    <p class="country-currency">${2}</p>
   </div>
 </article>`;
 });
