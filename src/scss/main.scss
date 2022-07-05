@@ -1,3 +1,50 @@
+@use "./reset.scss";
+@use "./svg.scss";
+@use "./typo.scss";
+
 body {
-  background-color: red;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 85rem;
+}
+
+.container {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(160, 160, 160, 0.302);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0px 5px 15px #3a3a3a35;
+}
+
+article {
+  img {
+    border-radius: 10px;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.country-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.misc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }

@@ -1,5 +1,208 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
 body {
-  background-color: red;
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+svg {
+  width: 1rem;
+  padding-right: 0.5rem;
+}
+
+:root {
+  --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #3a3a3a;
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  letter-spacing: -0.2rem;
+}
+
+h4 {
+  font-size: var(--font-size-md);
+  letter-spacing: -0.1rem;
+}
+
+body {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 85rem;
+}
+
+.container {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(160, 160, 160, 0.302);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0px 5px 15px rgba(58, 58, 58, 0.2078431373);
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+article img {
+  border-radius: 10px;
+}
+
+.country-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.misc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.misc p {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */
