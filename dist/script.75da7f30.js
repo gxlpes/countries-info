@@ -151,6 +151,17 @@ var getCountryAndNeighbour = function getCountryAndNeighbour(country) {
 
 
     renderCountry(data); // get neighbour country
+
+    var _data$borders = _slicedToArray(data.borders, 1),
+        neighbour = _data$borders[0];
+
+    if (!neighbour) return; // AJAX call country 2
+
+    var request2 = new XMLHttpRequest();
+    request2.open("GET", "https://restcountries.com/v2/alpha/".concat(neighbour)); // get data information from country
+
+    request2.send();
+    request2.addEventListener("load", function () {});
   });
 };
 

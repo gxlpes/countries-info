@@ -46,6 +46,16 @@ const getCountryAndNeighbour = function (country) {
     renderCountry(data);
 
     // get neighbour country
+    const [neighbour] = data.borders;
+
+    if (!neighbour) return;
+
+    // AJAX call country 2
+    const request2 = new XMLHttpRequest();
+    request2.open("GET", `https://restcountries.com/v2/alpha/${neighbour}`); // get data information from country
+    request2.send();
+
+    request2.addEventListener("load", function () {});
   });
 };
 
