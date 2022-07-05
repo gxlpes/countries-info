@@ -162,9 +162,8 @@ var getCountryAndNeighbour = function getCountryAndNeighbour(country) {
 
     request2.send();
     request2.addEventListener("load", function () {
-      var _JSON$parse3 = JSON.parse(this.responseText),
-          _JSON$parse4 = _slicedToArray(_JSON$parse3, 1),
-          data2 = _JSON$parse4[0];
+      var data2 = JSON.parse(this.responseText);
+      renderCountry(data2);
     });
   });
 };
