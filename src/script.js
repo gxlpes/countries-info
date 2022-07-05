@@ -55,9 +55,10 @@ const getCountryAndNeighbour = function (country) {
     request2.open("GET", `https://restcountries.com/v2/alpha/${neighbour}`); // get data information from country
     request2.send();
 
-    request2.addEventListener("load", function () {});
+    request2.addEventListener("load", function () {
+      const [data2] = JSON.parse(this.responseText);
+    });
   });
 };
 
 getCountryAndNeighbour("portugal");
-getCountryAndNeighbour("brazil");

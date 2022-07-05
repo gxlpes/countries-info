@@ -161,12 +161,15 @@ var getCountryAndNeighbour = function getCountryAndNeighbour(country) {
     request2.open("GET", "https://restcountries.com/v2/alpha/".concat(neighbour)); // get data information from country
 
     request2.send();
-    request2.addEventListener("load", function () {});
+    request2.addEventListener("load", function () {
+      var _JSON$parse3 = JSON.parse(this.responseText),
+          _JSON$parse4 = _slicedToArray(_JSON$parse3, 1),
+          data2 = _JSON$parse4[0];
+    });
   });
 };
 
 getCountryAndNeighbour("portugal");
-getCountryAndNeighbour("brazil");
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
