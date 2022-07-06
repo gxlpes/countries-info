@@ -62,4 +62,10 @@ const getCountryAndNeighbour = function (country) {
   });
 };
 
-getCountryAndNeighbour("portugal");
+const submitBtn = document.querySelector("button");
+
+submitBtn.addEventListener("click", () => {
+  const inputText = document.getElementById("search").value;
+  console.log(inputText);
+  getCountryAndNeighbour(inputText);
+});
