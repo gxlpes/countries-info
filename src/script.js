@@ -44,26 +44,10 @@ const getCountryAndNeighbour = function (country) {
 
     // render country 1
     renderCountry(data);
-
-    // get neighbour country
-    const [neighbour] = data.borders;
-
-    if (!neighbour) return;
-
-    // AJAX call country 2
-    const request2 = new XMLHttpRequest();
-    request2.open("GET", `https://restcountries.com/v2/alpha/${neighbour}`); // get data information from country
-    request2.send();
-
-    request2.addEventListener("load", function () {
-      const data2 = JSON.parse(this.responseText);
-      renderCountry(data2);
-    });
   });
 };
 
 const submitBtn = document.querySelector("button");
-
 submitBtn.addEventListener("click", () => {
   const inputText = document.getElementById("search").value;
   console.log(inputText);

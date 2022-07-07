@@ -162,8 +162,14 @@ body {
   margin: auto;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   max-width: 85rem;
+}
+
+.user-input {
+  display: flex;
+  gap: 1rem;
 }
 
 article {

@@ -150,21 +150,7 @@ var getCountryAndNeighbour = function getCountryAndNeighbour(country) {
     // render country 1
 
 
-    renderCountry(data); // get neighbour country
-
-    var _data$borders = _slicedToArray(data.borders, 1),
-        neighbour = _data$borders[0];
-
-    if (!neighbour) return; // AJAX call country 2
-
-    var request2 = new XMLHttpRequest();
-    request2.open("GET", "https://restcountries.com/v2/alpha/".concat(neighbour)); // get data information from country
-
-    request2.send();
-    request2.addEventListener("load", function () {
-      var data2 = JSON.parse(this.responseText);
-      renderCountry(data2);
-    });
+    renderCountry(data);
   });
 };
 
@@ -202,7 +188,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63264" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56903" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
