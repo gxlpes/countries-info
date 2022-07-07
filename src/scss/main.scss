@@ -1,8 +1,10 @@
 @use "./reset.scss";
 @use "./svg.scss";
 @use "./typo.scss";
+@use "./button.scss";
 
 body {
+  padding: 2rem;
   margin: auto;
   display: flex;
   align-items: center;
@@ -13,6 +15,8 @@ body {
 
 .user-input {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
