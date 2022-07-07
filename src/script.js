@@ -47,6 +47,7 @@ const getCountryAndNeighbour = function (country) {
   });
 };
 
+// triggers to the same function
 submitBtn.addEventListener("click", () => {
   const inputText = document.getElementById("search").value;
   if (countriesContainer.firstChild) {
@@ -54,5 +55,16 @@ submitBtn.addEventListener("click", () => {
     getCountryAndNeighbour(inputText);
   } else {
     getCountryAndNeighbour(inputText);
+  }
+});
+
+document.addEventListener("keyup", function (event) {
+  if (event.code === "Enter") {
+    if (countriesContainer.firstChild) {
+      countriesContainer.removeChild(countriesContainer.lastElementChild);
+      getCountryAndNeighbour(inputText);
+    } else {
+      getCountryAndNeighbour(inputText);
+    }
   }
 });

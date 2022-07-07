@@ -153,7 +153,8 @@ var getCountryAndNeighbour = function getCountryAndNeighbour(country) {
 
     renderCountry(data);
   });
-};
+}; // triggers to the same function
+
 
 submitBtn.addEventListener("click", function () {
   var inputText = document.getElementById("search").value;
@@ -163,6 +164,16 @@ submitBtn.addEventListener("click", function () {
     getCountryAndNeighbour(inputText);
   } else {
     getCountryAndNeighbour(inputText);
+  }
+});
+document.addEventListener("keyup", function (event) {
+  if (event.code === "Enter") {
+    if (countriesContainer.firstChild) {
+      countriesContainer.removeChild(countriesContainer.lastElementChild);
+      getCountryAndNeighbour(inputText);
+    } else {
+      getCountryAndNeighbour(inputText);
+    }
   }
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
