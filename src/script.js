@@ -1,4 +1,5 @@
 const countriesContainer = document.querySelector(".countries");
+const submitBtn = document.querySelector("button");
 
 //////////////////////////////////
 
@@ -29,7 +30,6 @@ const renderCountry = function (data) {
         </div>
     </div>
   </article>`;
-
   countriesContainer.insertAdjacentHTML("beforeend", html);
 };
 
@@ -47,9 +47,12 @@ const getCountryAndNeighbour = function (country) {
   });
 };
 
-const submitBtn = document.querySelector("button");
 submitBtn.addEventListener("click", () => {
   const inputText = document.getElementById("search").value;
-  console.log(inputText);
-  getCountryAndNeighbour(inputText);
+  if (countriesContainer.firstChild) {
+    countriesContainer.removeChild(countriesContainer.lastElementChild);
+    getCountryAndNeighbour(inputText);
+  } else {
+    getCountryAndNeighbour(inputText);
+  }
 });
