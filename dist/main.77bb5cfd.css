@@ -178,6 +178,11 @@ body {
   justify-content: center;
   max-width: 85rem;
 }
+body .alert {
+  padding: 2rem;
+  color: red;
+  font-weight: bold;
+}
 
 .user-input {
   display: flex;

@@ -11,6 +11,11 @@ body {
   flex-direction: column;
   justify-content: center;
   max-width: 85rem;
+  .alert {
+    padding: 2rem;
+    color: red;
+    font-weight: bold;
+  }
 }
 
 .user-input {

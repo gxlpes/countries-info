@@ -5,6 +5,7 @@ const textNode = document.createTextNode("Check your country spelling!");
 
 //////////////////////////////////
 
+// render the country request
 const renderCountry = function (data) {
   const html = `<article class="country">
     <img class="country-img" src="${data.flag}"/>
@@ -40,6 +41,7 @@ const getCountry = function (country) {
   request.send();
   request.onloadend = function () {
     if (request.status == 404) {
+      p.classList.add("alert");
       p.appendChild(textNode);
       document.body.appendChild(p);
     } else {
@@ -51,17 +53,7 @@ const getCountry = function (country) {
   };
 };
 
-// triggers to the same function
-submitBtn.addEventListener("click", () => {
-  const inputText = document.getElementById("search").value;
-  if (countriesContainer.firstChild) {
-    countriesContainer.removeChild(countriesContainer.lastElementChild);
-    getCountry(inputText);
-  } else {
-    getCountry(inputText);
-  }
-});
-
+// event listener to call main function
 document.addEventListener("keyup", function (event) {
   if (event.code === "Enter") {
     const inputText = document.getElementById("search").value;
