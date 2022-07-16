@@ -14,12 +14,10 @@ ul.addEventListener("change", (event) => {
 });
 
 const renderCountry = function (data) {
-  let firstIndex = selected[0];
-  console.log(firstIndex);
   const html = `<article class="country">
     <img class="country-img" src="${data.flag}"/>
       <div class="country-data">
-        <h3 class="country-name">${data[firstIndex]} </h3>
+        <h3 class="country-name">${data[selected[0]]} </h3>
         <h4 class="country-region">${data.region}</h4>
 
         <div class="misc">
