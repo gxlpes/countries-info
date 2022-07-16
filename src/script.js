@@ -1,5 +1,7 @@
 const countriesContainer = document.querySelector(".countries");
 const submitBtn = document.querySelector("button");
+const p = document.createElement("p");
+const textNode = document.createTextNode("Check your country spelling!");
 
 //////////////////////////////////
 
@@ -38,10 +40,11 @@ const getCountry = function (country) {
   request.send();
   request.onloadend = function () {
     if (request.status == 404) {
-      console.log("errrrrrrrrror");
+      p.appendChild(textNode);
+      document.body.appendChild(p);
     } else {
       const [data] = JSON.parse(this.responseText); // convert string to array containing object and destructure the array
-
+      p.remove();
       // render country
       renderCountry(data);
     }
