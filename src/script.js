@@ -10,15 +10,16 @@ ul.addEventListener("change", (event) => {
   if (event.target.type === "checkbox") {
     const checked = document.querySelectorAll('input[type="checkbox"]:checked');
     selected = Array.from(checked).map((x) => x.id);
-    console.log(selected);
   }
 });
 
 const renderCountry = function (data) {
+  let firstIndex = selected[0];
+  console.log(firstIndex);
   const html = `<article class="country">
     <img class="country-img" src="${data.flag}"/>
       <div class="country-data">
-        <h3 class="country-name">${data.name}</h3>
+        <h3 class="country-name">${data[firstIndex]} </h3>
         <h4 class="country-region">${data.region}</h4>
 
         <div class="misc">
@@ -40,6 +41,7 @@ const renderCountry = function (data) {
     </div>
   </article>`;
   countriesContainer.insertAdjacentHTML("beforeend", html);
+  console.log(data[firstIndex]);
 };
 
 // AJAX call country 1
