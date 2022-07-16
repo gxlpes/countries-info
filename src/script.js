@@ -31,18 +31,21 @@ const renderCountry = function (data) {
   countriesContainer.insertAdjacentHTML("beforeend", html);
 };
 
-// AJAX call country 1
-const getCountryAndNeighbour = function (country) {
+// AJAX call country
+const getCountry = function (country) {
   const request = new XMLHttpRequest();
   request.open("GET", `https://restcountries.com/v2/name/${country}`); // get data information from country
   request.send();
+  request.onloadend = function () {
+    if (request.status == 404) {
+      console.log("errrrrrrrrror");
+    } else {
+      const [data] = JSON.parse(this.responseText); // convert string to array containing object and destructure the array
 
-  request.addEventListener("load", function () {
-    const [data] = JSON.parse(this.responseText); // convert string to array containing object and destructure the array
-
-    // render country 1
-    renderCountry(data);
-  });
+      // render country
+      renderCountry(data);
+    }
+  };
 };
 
 // triggers to the same function
@@ -50,9 +53,9 @@ submitBtn.addEventListener("click", () => {
   const inputText = document.getElementById("search").value;
   if (countriesContainer.firstChild) {
     countriesContainer.removeChild(countriesContainer.lastElementChild);
-    getCountryAndNeighbour(inputText);
+    getCountry(inputText);
   } else {
-    getCountryAndNeighbour(inputText);
+    getCountry(inputText);
   }
 });
 
@@ -61,9 +64,9 @@ document.addEventListener("keyup", function (event) {
     const inputText = document.getElementById("search").value;
     if (countriesContainer.firstChild) {
       countriesContainer.removeChild(countriesContainer.lastElementChild);
-      getCountryAndNeighbour(inputText);
+      getCountry(inputText);
     } else {
-      getCountryAndNeighbour(inputText);
+      getCountry(inputText);
     }
   }
 });
