@@ -2,9 +2,9 @@ const countriesContainer = document.querySelector(".countries");
 const submitBtn = document.querySelector("button");
 const p = document.createElement("p");
 const textNode = document.createTextNode("Check your country spelling!");
+const field = document.querySelector(".field");
 
-//////////////////////////////////
-
+////////////////////////////////////////////////////////////////////
 // render the country request
 const renderCountry = function (data) {
   const html = `<article class="country">
@@ -34,6 +34,7 @@ const renderCountry = function (data) {
   countriesContainer.insertAdjacentHTML("beforeend", html);
 };
 
+////////////////////////////////////////////////////////////////////
 // AJAX call country
 const getCountry = function (country) {
   const request = new XMLHttpRequest();
@@ -45,6 +46,7 @@ const getCountry = function (country) {
       p.appendChild(textNode);
       document.body.appendChild(p);
     } else {
+      field.style.marginTop = "5rem";
       const [data] = JSON.parse(this.responseText); // convert string to array containing object and destructure the array
       p.remove();
       // render country
@@ -53,7 +55,8 @@ const getCountry = function (country) {
   };
 };
 
-// event listener to call main function
+////////////////////////////////////////////////////////////////////
+// event listeners to call main function
 document.addEventListener("keyup", function (event) {
   if (event.code === "Enter") {
     const inputText = document.getElementById("search").value;
@@ -63,5 +66,31 @@ document.addEventListener("keyup", function (event) {
     } else {
       getCountry(inputText);
     }
+  }
+});
+
+const btnSubmit = document.getElementById("submit");
+btnSubmit.addEventListener("click", () => {
+  const inputText = document.getElementById("search").value;
+  if (countriesContainer.firstChild) {
+    countriesContainer.removeChild(countriesContainer.lastElementChild);
+    getCountry(inputText);
+  } else {
+    getCountry(inputText);
+  }
+});
+
+////////////////////////////////////////////////////////////////////
+// check userinput is blank
+const inputText = document.getElementById("search");
+document.addEventListener("keyup", function (event) {
+  const article = document.querySelector(".country");
+  if (event.code === "Delete" && inputText.value.length == 0) {
+    field.style.marginTop = "20rem";
+    article.style.opacity = "0";
+  }
+  if (event.code === "Backspace" && inputText.value.length == 0) {
+    field.style.marginTop = "20rem";
+    article.style.opacity = "0";
   }
 });

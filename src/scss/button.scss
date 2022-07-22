@@ -1,10 +1,15 @@
 button {
+  font-family: "Poppins", sans-serif;
   max-width: fit-content;
-  background-color: #3e86c9;
+  background-color: #0d58d0;
   filter: drop-shadow(0px 5px 7px rgba(0, 0, 0, 0.062));
   border: 0px;
   color: white;
   border-radius: 5px;
-  padding: 0.3rem;
+  padding: 0.7rem 2rem;
   cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
 }

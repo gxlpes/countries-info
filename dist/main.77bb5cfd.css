@@ -159,17 +159,105 @@ h4 {
 }
 
 button {
+  font-family: "Poppins", sans-serif;
   max-width: fit-content;
-  background-color: #3e86c9;
+  background-color: #0d58d0;
   filter: drop-shadow(0px 5px 7px rgba(0, 0, 0, 0.062));
   border: 0px;
   color: white;
   border-radius: 5px;
-  padding: 0.3rem;
+  padding: 0.7rem 2rem;
   cursor: pointer;
 }
 
+button:hover {
+  opacity: 0.8;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 20rem;
+  width: 50%;
+  transition: all 0.4s ease-in-out;
+}
+
+.move {
+  transform: translateY(-10rem);
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #6891d4;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #ffffff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #494949;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+article {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  gap: 1rem;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0px 5px 15px rgba(58, 58, 58, 0.2078431373);
+  animation: appear 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+article img {
+  border-radius: 10px;
+  max-width: 25rem;
+}
+
 body {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(159, 159, 159);
   padding: 2rem;
   margin: auto;
   display: flex;
@@ -177,34 +265,13 @@ body {
   flex-direction: column;
   justify-content: center;
   max-width: 85rem;
+  transition: all 0.3s ease-in-out;
 }
 body .alert {
   padding: 2rem;
-  color: red;
+  color: rgb(213, 57, 57);
   font-weight: bold;
-}
-
-.user-input {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-article {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 5rem;
-  border: 2px solid rgba(160, 160, 160, 0.302);
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0px 5px 15px rgba(58, 58, 58, 0.2078431373);
-}
-article img {
-  border-radius: 10px;
-  max-width: 25rem;
+  animation: appear 1s ease-in-out;
 }
 
 .country-data {
@@ -212,6 +279,7 @@ article img {
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
+  animation: appear 1s ease-in-out;
 }
 
 .misc {
@@ -223,6 +291,22 @@ article img {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  transition: all 0.3s ease-in-out;
+}
+
+.form__group {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

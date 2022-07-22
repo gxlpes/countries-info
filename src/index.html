@@ -8,9 +8,10 @@
     <title>Countries Info</title>
   </head>
   <body>
-    <div class="user-input">
-      <input id="search" type="text" />
-      <button type="submit">Submit</button>
+    <div class="form__group field">
+      <input type="input" class="form__field" placeholder="Name" name="name" id="search" required />
+      <label for="name" class="form__label">Country</label>
+      <button type="submit" id="submit">Search</button>
     </div>
     <main class="container">
       <div class="countries"></div>
