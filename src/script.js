@@ -1,3 +1,13 @@
+function debounce(callback, wait) {
+  let timerId;
+  return (...args) => {
+    clearTimeout(timerId);
+    timerId = setTimeout(() => {
+      callback(...args);
+    }, wait);
+  };
+}
+
 const countriesContainer = document.querySelector(".countries");
 const submitBtn = document.querySelector("button");
 const p = document.createElement("p");
@@ -60,6 +70,11 @@ const getCountry = function (country) {
 document.addEventListener("keyup", function (event) {
   if (event.code === "Enter") {
     const inputText = document.getElementById("search").value;
+
+    if (inputText === inputText) {
+      alert("haha");
+    }
+
     if (countriesContainer.firstChild) {
       countriesContainer.removeChild(countriesContainer.lastElementChild);
       getCountry(inputText);
@@ -70,15 +85,19 @@ document.addEventListener("keyup", function (event) {
 });
 
 const btnSubmit = document.getElementById("submit");
-btnSubmit.addEventListener("click", () => {
-  const inputText = document.getElementById("search").value;
-  if (countriesContainer.firstChild) {
-    countriesContainer.removeChild(countriesContainer.lastElementChild);
-    getCountry(inputText);
-  } else {
-    getCountry(inputText);
-  }
-});
+btnSubmit.addEventListener(
+  "click",
+  debounce(() => {
+    const inputText = document.getElementById("search").value;
+    if (countriesContainer.firstChild) {
+      countriesContainer.removeChild(countriesContainer.lastElementChild);
+      getCountry(inputText);
+    } else {
+      getCountry(inputText);
+    }
+  }),
+  5000
+);
 
 ////////////////////////////////////////////////////////////////////
 // check userinput is blank

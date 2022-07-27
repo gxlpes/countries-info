@@ -130,6 +130,20 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+function debounce(callback, wait) {
+  var timerId;
+  return function () {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    clearTimeout(timerId);
+    timerId = setTimeout(function () {
+      callback.apply(void 0, args);
+    }, wait);
+  };
+}
+
 var countriesContainer = document.querySelector(".countries");
 var submitBtn = document.querySelector("button");
 var p = document.createElement("p");
@@ -176,6 +190,10 @@ document.addEventListener("keyup", function (event) {
   if (event.code === "Enter") {
     var _inputText = document.getElementById("search").value;
 
+    if (_inputText === _inputText) {
+      alert("haha");
+    }
+
     if (countriesContainer.firstChild) {
       countriesContainer.removeChild(countriesContainer.lastElementChild);
       getCountry(_inputText);
@@ -185,7 +203,7 @@ document.addEventListener("keyup", function (event) {
   }
 });
 var btnSubmit = document.getElementById("submit");
-btnSubmit.addEventListener("click", function () {
+btnSubmit.addEventListener("click", debounce(function () {
   var inputText = document.getElementById("search").value;
 
   if (countriesContainer.firstChild) {
@@ -194,7 +212,7 @@ btnSubmit.addEventListener("click", function () {
   } else {
     getCountry(inputText);
   }
-}); ////////////////////////////////////////////////////////////////////
+}), 5000); ////////////////////////////////////////////////////////////////////
 // check userinput is blank
 
 var inputText = document.getElementById("search");
@@ -239,7 +257,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49805" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64482" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
