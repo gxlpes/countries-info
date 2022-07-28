@@ -313,7 +313,7 @@ body .alert {
 .form__group {
   display: flex;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 @keyframes appear {

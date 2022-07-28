@@ -71,10 +71,6 @@ document.addEventListener("keyup", function (event) {
   if (event.code === "Enter") {
     const inputText = document.getElementById("search").value;
 
-    if (inputText === inputText) {
-      alert("haha");
-    }
-
     if (countriesContainer.firstChild) {
       countriesContainer.removeChild(countriesContainer.lastElementChild);
       getCountry(inputText);
@@ -96,7 +92,7 @@ btnSubmit.addEventListener(
       getCountry(inputText);
     }
   }),
-  5000
+  10000
 );
 
 ////////////////////////////////////////////////////////////////////

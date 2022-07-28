@@ -190,10 +190,6 @@ document.addEventListener("keyup", function (event) {
   if (event.code === "Enter") {
     var _inputText = document.getElementById("search").value;
 
-    if (_inputText === _inputText) {
-      alert("haha");
-    }
-
     if (countriesContainer.firstChild) {
       countriesContainer.removeChild(countriesContainer.lastElementChild);
       getCountry(_inputText);
@@ -212,7 +208,7 @@ btnSubmit.addEventListener("click", debounce(function () {
   } else {
     getCountry(inputText);
   }
-}), 5000); ////////////////////////////////////////////////////////////////////
+}), 10000); ////////////////////////////////////////////////////////////////////
 // check userinput is blank
 
 var inputText = document.getElementById("search");
