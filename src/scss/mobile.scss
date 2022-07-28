@@ -9,7 +9,11 @@
     align-items: center;
   }
 
+  article img {
+    width: 100%;
+  }
+
   .container {
-    flex-shrink: 2;
+    width: 70%;
   }
 }
