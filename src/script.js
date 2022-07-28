@@ -104,11 +104,7 @@ btnSubmit.addEventListener(
 const inputText = document.getElementById("search");
 document.addEventListener("keyup", function (event) {
   const article = document.querySelector(".country");
-  if (event.code === "Delete" && inputText.value.length == 0) {
-    field.style.marginTop = "20rem";
-    article.style.opacity = "0";
-  }
-  if (event.code === "Backspace" && inputText.value.length == 0) {
+  if (inputText.value.length == 0) {
     field.style.marginTop = "20rem";
     article.style.opacity = "0";
   }

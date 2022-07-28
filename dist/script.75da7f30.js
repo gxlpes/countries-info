@@ -219,12 +219,7 @@ var inputText = document.getElementById("search");
 document.addEventListener("keyup", function (event) {
   var article = document.querySelector(".country");
 
-  if (event.code === "Delete" && inputText.value.length == 0) {
-    field.style.marginTop = "20rem";
-    article.style.opacity = "0";
-  }
-
-  if (event.code === "Backspace" && inputText.value.length == 0) {
+  if (inputText.value.length == 0) {
     field.style.marginTop = "20rem";
     article.style.opacity = "0";
   }
@@ -257,7 +252,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49936" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50925" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
