@@ -6,6 +6,7 @@ Project created to practice some coding aspects of fetchAPI and how it can integ
 
 Tech used: 
 <ul>
-  <li>HTML, CSS</li>
+  <li>HTML</li>
+  <li>SCSS</li>
   <li> JavaScript (XML Requests, user input, list rendering)</li>
   <li>Countries API</li>
